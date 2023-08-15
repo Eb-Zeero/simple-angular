@@ -1,0 +1,12 @@
+version: '3'
+services:
+  simple-angular:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: simple-angular-container
+    ports:
+      - "4200:80"
+    restart: always
+    extra_hosts:
+      - "host.docker.internal:host-gateway" # This maps to the host's IP
